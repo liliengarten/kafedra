@@ -1,18 +1,17 @@
 <script setup>
-  import HeaderStickyTop from './components/Header-sticky-top.vue';
-  import ItemList from './components/Item-list.vue';
-  import FooterBottom from '@/components/footer-bottom.vue'
+import Header from './components/header.vue'
+import ItemList from './components/item-list.vue'
+import Cart from './components/cart.vue'
+import FooterBottom from '@/components/footer-bottom.vue'
 </script>
 
 <template>
-  <HeaderStickyTop></HeaderStickyTop>
-
-  <div class="max-w-[960px] mx-auto my-15">
-    <ItemList></ItemList>
-  </div>
-
-  <footer-bottom></footer-bottom>
+  <Header/>
+  <ItemList/>
+  <Cart/>
+  <footer-bottom/>
 </template>
 
 <style scoped>
+
 </style>

@@ -8,7 +8,7 @@
 <style scoped>
   footer {
     text-align: center;
-    padding-block: 8px;
+    padding-block: 12px;
     background-color: white;
 }
 </style>

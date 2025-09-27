@@ -2,9 +2,10 @@
 
 * {
   font-family: Roboto, Arial;
+  box-sizing: border-box;
 }
 
 body {
   background-color: hsl(0, 0%, 90%);
-  padding-top: 32px;
+  padding-top: 120px;
 }
