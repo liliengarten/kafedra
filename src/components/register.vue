@@ -2,6 +2,10 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
+defineProps({
+  Switch: Function,
+})
+
 const fio = ref('')
 const email = ref('')
 const password = ref('')
@@ -21,7 +25,6 @@ const register = async () => {
       email.value = ''
       password.value = ''
     }
-
   } catch (error) {
     const errorData = error.response.data
 
@@ -34,7 +37,7 @@ const register = async () => {
 
 <template>
   <div class="wrapper">
-    <h1>Регистрация</h1>
+    <h1 class="text-[2rem]">Регистрация</h1>
 
     <form
       @submit.prevent="register"
@@ -71,7 +74,13 @@ const register = async () => {
 
       <div class="flex justify-center gap-1.5">
         <p class="text-neutral-400">Уже есть аккаунт?</p>
-        <button class="text-neutral-400 hover:text-blue-400 hover:cursor-pointer">Войти</button>
+        <button
+          @click="Switch"
+          type="button"
+          class="text-neutral-400 hover:text-blue-400 hover:cursor-pointer"
+        >
+          Войти
+        </button>
       </div>
     </form>
   </div>
@@ -84,7 +93,7 @@ const register = async () => {
   gap: 24px;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 69px);
+  height: calc(100vh - 94px);
 }
 
 h1 {

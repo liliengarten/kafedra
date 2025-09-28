@@ -2,6 +2,10 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
+defineProps({
+  Switch: Function,
+})
+
 const email = ref('')
 const password = ref('')
 
@@ -30,7 +34,7 @@ const login = async () => {
 
 <template>
   <div class="wrapper">
-    <h1>Вход в аккаунт</h1>
+    <h1 class="text-[2rem]">Вход в аккаунт</h1>
 
     <form
       @submit.prevent="login"
@@ -47,7 +51,7 @@ const login = async () => {
 
       <div class="flex justify-between items-center mb-[8px]">
         <h1>Пароль</h1>
-        <button class="text-neutral-400 hover:text-blue-400 hover:cursor-pointer">
+        <button type="button" class="text-neutral-400 hover:text-blue-400 hover:cursor-pointer">
           Забыли пароль?
         </button>
       </div>
@@ -68,7 +72,11 @@ const login = async () => {
 
       <div class="flex justify-center gap-1.5">
         <p class="text-neutral-400">Нет аккаунта?</p>
-        <button class="text-neutral-400 hover:text-blue-400 hover:cursor-pointer">
+        <button
+          @click="Switch"
+          type="button"
+          class="text-neutral-400 hover:text-blue-400 hover:cursor-pointer"
+        >
           Зарегистрироваться
         </button>
       </div>
@@ -83,7 +91,7 @@ const login = async () => {
   gap: 24px;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 69px);
+  height: calc(100vh - 94px);
 }
 
 h1 {

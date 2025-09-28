@@ -5,6 +5,8 @@ import ItemList from '@/components/item-list.vue'
 import Cart from '@/components/cart.vue'
 
 const items = inject('items')
+const cartState = inject('cartState')
+const cartClose = inject('cartClose')
 
 </script>
 

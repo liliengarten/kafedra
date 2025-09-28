@@ -17,7 +17,6 @@ defineProps({
         :productName="item.name"
         :imageUrl="item.image"
         :productPrice="item.price"
-        :addToCart="addToCart"
       />
     </div>
   </div>

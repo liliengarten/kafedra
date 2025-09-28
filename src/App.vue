@@ -9,8 +9,6 @@ const userState = ref(false)
 const cartState = ref(false)
 const items = ref([])
 
-provide('items', items)
-
 const cartOpen = () => {
   cartState.value = true
 }
@@ -18,6 +16,13 @@ const cartOpen = () => {
 const cartClose = () => {
   cartState.value = false
 }
+
+provide('items', items)
+provide('cartState', cartState)
+provide('cartClose', cartClose)
+provide('userState', userState)
+
+console.log(userToken)
 
 onMounted(async () => {
   try {

@@ -1,8 +1,9 @@
 <script setup>
-defineProps({
-  cartOpen: Function
-})
+import { inject, reactive } from 'vue'
 
+defineProps({
+  cartOpen: Function,
+})
 </script>
 
 <template>
@@ -13,15 +14,22 @@ defineProps({
       </router-link>
 
       <nav class="flex gap-[24px]">
-        <button @click="cartOpen"  class="flex gap-[14px] items-center hover:cursor-pointer hover:opacity-50 transition-opacity">
+        <button
+          @click="cartOpen"
+          class="flex gap-[14px] items-center hover:cursor-pointer hover:opacity-50 transition-opacity"
+        >
           <img src="/public/cart.svg" alt="" class="w-[32px]" />
           <p>Корзина</p>
         </button>
 
-        <button class="flex gap-[14px] items-center hover:cursor-pointer hover:opacity-50 transition-opacity">
-          <img src="/user.svg" alt="" class="w-[36px]" />
-          <RouterLink to="/profile"> Профиль </RouterLink>
-        </button>
+
+        <router-link to="/profile">
+          <button
+            class="flex gap-[14px] items-center hover:cursor-pointer hover:opacity-50 transition-opacity">
+            <img src="/user.svg" alt="" class="w-[36px]" />
+            <p> Профиль </p>
+          </button>
+        </router-link>
       </nav>
     </div>
   </header>
@@ -44,5 +52,4 @@ a:hover {
   color: hsl(210, 70%, 70%);
 }
 </style>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
