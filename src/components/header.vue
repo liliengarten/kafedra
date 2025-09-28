@@ -1,3 +1,10 @@
+<script setup>
+defineProps({
+  cartOpen: Function
+})
+
+</script>
+
 <template>
   <header class="bg-white h-[69px] shadow-md">
     <div class="flex justify-between items-center mx-auto max-w-[70vw] h-full">
@@ -6,20 +13,15 @@
       </div>
 
       <nav class="flex gap-[24px]">
-        <a href="/" class="flex gap-[14px] items-center">
-          <img src="/shopping-bag.svg" alt="" class="w-[32px]" />
-          <p>Каталог</p>
-        </a>
-
-        <a href="/" class="flex gap-[14px] items-center">
+        <button @click="cartOpen"  class="flex gap-[14px] items-center hover:cursor-pointer hover:opacity-50 transition-opacity">
           <img src="/public/cart.svg" alt="" class="w-[32px]" />
           <p>Корзина</p>
-        </a>
+        </button>
 
-        <a href="/" class="flex gap-[14px] items-center">
+        <button class="flex gap-[14px] items-center hover:cursor-pointer hover:opacity-50 transition-opacity">
           <img src="/user.svg" alt="" class="w-[36px]" />
           <p>Профиль</p>
-        </a>
+        </button>
       </nav>
     </div>
   </header>

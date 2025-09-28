@@ -7,6 +7,10 @@
 
 <style scoped>
   footer {
+    height: 69px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-align: center;
     padding-block: 12px;
     background-color: white;

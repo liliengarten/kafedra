@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "c0dfd7b7-c60f-467e-a0db-c73b4e7127a4",
+		"name": "Just buy Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40280713"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@admin.ru\",\n    \"password\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://lifestealer86.ru/api-shop/login",
+					"protocol": "http",
+					"host": [
+						"lifestealer86",
+						"ru"
+					],
+					"path": [
+						"api-shop",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registration",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fio\": \"Иванов Иван Иванович\",\n    \"email\": \"admin@admin.ru\",\n    \"password\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://lifestealer86.ru/api-shop/signup",
+					"protocol": "http",
+					"host": [
+						"lifestealer86",
+						"ru"
+					],
+					"path": [
+						"api-shop",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://lifestealer86.ru/api-shop/products",
+					"protocol": "http",
+					"host": [
+						"lifestealer86",
+						"ru"
+					],
+					"path": [
+						"api-shop",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add product to cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "367|MtgZVmfByXDugo1G2hUl15T0EbYcSL5jdEaLUU9r3b00cd9e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://lifestealer86.ru/api-shop/cart/1",
+					"protocol": "http",
+					"host": [
+						"lifestealer86",
+						"ru"
+					],
+					"path": [
+						"api-shop",
+						"cart",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "367|MtgZVmfByXDugo1G2hUl15T0EbYcSL5jdEaLUU9r3b00cd9e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://lifestealer86.ru/api-shop/cart",
+					"protocol": "http",
+					"host": [
+						"lifestealer86",
+						"ru"
+					],
+					"path": [
+						"api-shop",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product from cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "367|MtgZVmfByXDugo1G2hUl15T0EbYcSL5jdEaLUU9r3b00cd9e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://lifestealer86.ru/api-shop/cart/{id}",
+					"protocol": "http",
+					"host": [
+						"lifestealer86",
+						"ru"
+					],
+					"path": [
+						"api-shop",
+						"cart",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "367|MtgZVmfByXDugo1G2hUl15T0EbYcSL5jdEaLUU9r3b00cd9e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://lifestealer86.ru/api-shop/order",
+					"protocol": "http",
+					"host": [
+						"lifestealer86",
+						"ru"
+					],
+					"path": [
+						"api-shop",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get completed orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "367|MtgZVmfByXDugo1G2hUl15T0EbYcSL5jdEaLUU9r3b00cd9e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://lifestealer86.ru/api-shop/order",
+					"protocol": "http",
+					"host": [
+						"lifestealer86",
+						"ru"
+					],
+					"path": [
+						"api-shop",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "367|MtgZVmfByXDugo1G2hUl15T0EbYcSL5jdEaLUU9r3b00cd9e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://lifestealer86.ru/api-shop/logout",
+					"protocol": "http",
+					"host": [
+						"lifestealer86",
+						"ru"
+					],
+					"path": [
+						"api-shop",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearer_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
