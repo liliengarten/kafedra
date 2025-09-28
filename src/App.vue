@@ -1,17 +1,15 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, provide, ref } from 'vue'
 import axios from 'axios'
 
-import Header from './components/header.vue'
-import ItemList from './components/item-list.vue'
-import Cart from './components/cart.vue'
-import Register from './components/register.vue'
-import Login from './components/login.vue'
+import Header from '@/components/header.vue'
 import Footer from '@/components/footer.vue'
-
+const userToken = ref('')
+const userState = ref(false)
+const cartState = ref(false)
 const items = ref([])
 
-const cartState = ref(false)
+provide('items', items)
 
 const cartOpen = () => {
   cartState.value = true
@@ -24,8 +22,15 @@ const cartClose = () => {
 onMounted(async () => {
   try {
     const { data } = await axios.get('http://lifestealer86.ru/api-shop/products')
+    userToken.value = localStorage.getItem('auth_token')
 
     items.value = data
+
+    if (userToken.value) {
+      userState.value = true
+    } else {
+      userState.value = false
+    }
   } catch (error) {
     console.log(error)
   }
@@ -33,11 +38,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <Header :cartOpen="cartOpen" />
-<!--  <Register />-->
-  <Login />
-<!--  <ItemList :Items="items.data" />-->
-  <Cart v-if="cartState" :cartClose="cartClose" />
+  <Header :cartOpen="cartOpen" /> />
+  <router-view></router-view>
   <Footer />
 </template>
 

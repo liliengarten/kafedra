@@ -8,9 +8,9 @@ defineProps({
 <template>
   <header class="bg-white h-[69px] shadow-md">
     <div class="flex justify-between items-center mx-auto max-w-[70vw] h-full">
-      <div>
+      <router-link to="/">
         <img class="object-cover w-full max-h-[58px]" src="/logo.svg" alt="logo" />
-      </div>
+      </router-link>
 
       <nav class="flex gap-[24px]">
         <button @click="cartOpen"  class="flex gap-[14px] items-center hover:cursor-pointer hover:opacity-50 transition-opacity">
@@ -20,7 +20,7 @@ defineProps({
 
         <button class="flex gap-[14px] items-center hover:cursor-pointer hover:opacity-50 transition-opacity">
           <img src="/user.svg" alt="" class="w-[36px]" />
-          <p>Профиль</p>
+          <RouterLink to="/profile"> Профиль </RouterLink>
         </button>
       </nav>
     </div>

@@ -14,14 +14,14 @@ const register = async () => {
       password: password.value,
     })
 
-    if (response.status == 201) {
-      localStorage.setItem('auth_token', response.data.user_token)
-      console.log('Успех')
+    if (response.status == 200) {
+      localStorage.setItem('auth_token', response.data.data.user_token)
 
       fio.value = ''
       email.value = ''
       password.value = ''
     }
+
   } catch (error) {
     const errorData = error.response.data
 

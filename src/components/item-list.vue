@@ -5,15 +5,11 @@ defineProps({
   Items: Array
 })
 
-const addToCart = () => {
-  alert('add')
-}
 </script>
-
 
 <template>
   <div class="my-[96px]">
-    <h1 class="mb-[48px] text-[2rem] text-neutral-950 text-center"> Каталог товаров </h1>
+    <h1 class="mb-[48px] text-[2rem] text-neutral-950 text-center">Каталог товаров</h1>
     <div class="item-list">
       <Item
         v-for="item in Items"
@@ -28,11 +24,11 @@ const addToCart = () => {
 </template>
 
 <style scoped>
-  .item-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 24px;
-    max-width: 60vw;
-    margin-inline: auto;
-  }
+.item-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 24px;
+  max-width: 60vw;
+  margin-inline: auto;
+}
 </style>

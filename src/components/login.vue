@@ -13,8 +13,7 @@ const login = async () => {
     })
 
     if (response.status == 200) {
-      localStorage.setItem('auth_token', response.data.user_token)
-      console.log('Успех')
+      localStorage.setItem('auth_token', response.data.data.user_token)
 
       email.value = ''
       password.value = ''
@@ -27,7 +26,6 @@ const login = async () => {
     }
   }
 }
-
 </script>
 
 <template>
